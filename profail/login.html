@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101720">
+    <meta name="description" content="Log in to your RLEAD account.">
+    <title>Log in | RLEAD</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body class="auth-page">
+    <main class="auth-layout">
+      <a class="brand auth-brand" href="index.html" aria-label="RLEAD home">
+        <span class="brand-mark" aria-hidden="true">▶</span>
+        <span>RLEAD</span>
+      </a>
+      <section class="auth-intro" aria-labelledby="auth-title">
+        <a class="back-link" href="index.html">← Back to portfolio</a>
+        <p class="eyebrow">WELCOME BACK</p>
+        <h1 id="auth-title">Good to see <span>you again.</span></h1>
+        <p>Sign in to continue your journey with RLEAD.</p>
+      </section>
+      <section class="auth-panel" aria-label="Log in">
+        <form class="auth-card" data-demo-form="login">
+          <div class="auth-card-heading">
+            <span class="auth-icon" aria-hidden="true">↗</span>
+            <p class="eyebrow">YOUR ACCOUNT</p>
+            <h2>Log in</h2>
+            <p>Enter your details to access your account.</p>
+          </div>
+          <label for="login-email">Email address</label>
+          <input id="login-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+          <label for="login-password">Password</label>
+          <div class="password-field">
+            <input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required>
+            <button class="password-toggle" type="button" data-toggle-password aria-label="Show password">Show</button>
+          </div>
+          <button class="auth-submit" type="submit">Log in <span aria-hidden="true">→</span></button>
+          <p class="form-status" aria-live="polite"></p>
+          <p class="auth-switch">New to RLEAD? <a href="signup.html">Create an account</a></p>
+          <p class="auth-notice">Demo form only. A secure authentication service is required to sign in.</p>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

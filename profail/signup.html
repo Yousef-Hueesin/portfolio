@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101720">
+    <meta name="description" content="Create your RLEAD account.">
+    <title>Sign up | RLEAD</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body class="auth-page">
+    <main class="auth-layout">
+      <a class="brand auth-brand" href="index.html" aria-label="RLEAD home">
+        <span class="brand-mark" aria-hidden="true">▶</span>
+        <span>RLEAD</span>
+      </a>
+      <section class="auth-intro" aria-labelledby="auth-title">
+        <a class="back-link" href="index.html">← Back to portfolio</a>
+        <p class="eyebrow">JOIN THE COMMUNITY</p>
+        <h1>Make room for <span>what’s next.</span></h1>
+        <p>Create an account and get started with RLEAD.</p>
+      </section>
+      <section class="auth-panel" aria-label="Create an account">
+        <form class="auth-card" data-demo-form="signup">
+          <div class="auth-card-heading">
+            <span class="auth-icon" aria-hidden="true">✳</span>
+            <p class="eyebrow">GET STARTED</p>
+            <h2>Create account</h2>
+            <p>Fill in your details to join us.</p>
+          </div>
+          <label for="signup-name">Your name</label>
+          <input id="signup-name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
+          <label for="signup-email">Email address</label>
+          <input id="signup-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+          <label for="signup-password">Password</label>
+          <div class="password-field">
+            <input id="signup-password" name="password" type="password" autocomplete="new-password" minlength="8" placeholder="At least 8 characters" required>
+            <button class="password-toggle" type="button" data-toggle-password aria-label="Show password">Show</button>
+          </div>
+          <button class="auth-submit" type="submit">Create account <span aria-hidden="true">→</span></button>
+          <p class="form-status" aria-live="polite"></p>
+          <p class="auth-switch">Already have an account? <a href="login.html">Log in</a></p>
+          <p class="auth-notice">Demo form only. A secure authentication service is required to create accounts.</p>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
