@@ -1620,6 +1620,15 @@ body {
   text-align: left;
 }
 
+.service-card.graphic-card {
+  position: static;
+  inset: auto;
+  grid-column: auto;
+  width: auto;
+  min-height: 300px;
+  margin: 0;
+}
+
 .service-icon,
 .service-card:first-child .service-icon,
 .service-card:nth-child(2) .service-icon,
@@ -2087,6 +2096,12 @@ body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .service-card.graphic-card {
+    grid-column: 1 / -1;
+    width: min(100%, 520px);
+    justify-self: center;
+  }
+
   .auth-layout {
     gap: 24px 5vw;
   }
@@ -2259,6 +2274,12 @@ body {
   .service-card:not(.graphic-card) {
     min-height: 0;
     padding: 21px;
+  }
+
+  .service-card.graphic-card {
+    grid-column: auto;
+    width: auto;
+    min-height: 0;
   }
 
   .hire-button,
