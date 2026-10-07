@@ -1168,6 +1168,7 @@ a {
 
 body {
   min-width: 320px;
+  padding-top: 76px;
   background:
     radial-gradient(ellipse at 82% 4%, rgb(102 229 209 / 8%), transparent 28rem),
     var(--page);
@@ -1176,7 +1177,10 @@ body {
 }
 
 .site-header {
-  position: relative;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
   z-index: 5;
   align-items: center;
   min-height: 76px;
@@ -1224,14 +1228,18 @@ body {
   color: var(--cyan);
 }
 
-.main-nav .nav-signup {
+.main-nav .nav-login {
   border: 1px solid var(--cyan);
   border-radius: 999px;
   padding: 10px 17px;
+  background: transparent;
   color: var(--cyan);
+  font: inherit;
+  cursor: pointer;
 }
 
-.main-nav .nav-signup:hover {
+.main-nav .nav-login:hover,
+.main-nav .nav-login:focus-visible {
   background: var(--cyan);
   color: #10202b;
 }
@@ -1716,6 +1724,160 @@ body {
   transform: translateY(-4px);
 }
 
+.projects-section {
+  padding: 78px max(24px, 8vw);
+  background: #121b25;
+}
+
+.projects-section .section-heading {
+  margin-bottom: 32px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.project-card {
+  overflow: hidden;
+  border: 1px solid #344252;
+  border-radius: 16px;
+  background: #18232f;
+}
+
+.project-preview {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 1.6;
+  background: #0e151e;
+}
+
+.project-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 180ms ease;
+}
+
+.project-preview:hover img,
+.project-preview:focus-visible img {
+  transform: scale(1.04);
+}
+
+.project-copy {
+  padding: 22px;
+}
+
+.project-type {
+  margin: 0 0 10px;
+  color: var(--cyan);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.project-copy h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.project-copy > p:not(.project-type) {
+  margin: 0;
+  color: #c3cad4;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  margin-top: 20px;
+}
+
+.project-links a {
+  color: var(--cyan);
+  font-size: 13px;
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.project-links a:hover,
+.project-links a:focus-visible {
+  color: var(--white);
+}
+
+.testimonials-section {
+  padding: 78px max(24px, 8vw);
+  background: #252b35;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 210px;
+  padding: 26px;
+  border: 1px solid #344252;
+  border-radius: 16px;
+  background: #18232f;
+}
+
+.testimonial-card blockquote {
+  margin: 0 0 24px;
+  color: #e2e8ef;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.testimonial-avatar {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  place-items: center;
+  border: 1px solid #3b5360;
+  border-radius: 50%;
+  color: var(--cyan);
+  font-size: 20px;
+}
+
+.testimonial-author p {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  font-size: 13px;
+}
+
+.testimonial-author strong {
+  color: var(--white);
+}
+
+.testimonial-author p span {
+  color: #aeb8c5;
+  font-size: 12px;
+}
+
 .blog-section,
 .account-section {
   padding: 78px max(24px, 8vw);
@@ -2108,6 +2270,10 @@ body {
 }
 
 @media (max-width: 760px) {
+  body {
+    padding-top: 68px;
+  }
+
   .site-header {
     min-height: 68px;
     padding: 10px 20px;
@@ -2140,7 +2306,7 @@ body {
     padding: 12px 4px;
   }
 
-  .main-nav .nav-signup {
+  .main-nav .nav-login {
     align-self: flex-start;
     margin-top: 8px;
     padding: 10px 17px;
@@ -2177,6 +2343,14 @@ body {
 
   .work-section {
     width: calc(100% - 40px);
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .testimonial-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .footer-content {
@@ -2307,6 +2481,22 @@ body {
 
   .blog-section {
     padding: 54px 18px;
+  }
+
+  .projects-section {
+    padding: 54px 18px;
+  }
+
+  .testimonials-section {
+    padding: 54px 18px;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-grid {
+    grid-template-columns: 1fr;
   }
 
   .blog-grid {

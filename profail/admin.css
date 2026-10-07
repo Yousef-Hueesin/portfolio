@@ -1,0 +1,105 @@
+:root {
+  color-scheme: light;
+  --admin-ink: #202b27;
+  --admin-muted: #74807a;
+  --admin-line: #dce2dc;
+  --admin-canvas: #f4f5f2;
+  --admin-paper: #fff;
+  --admin-green: #1a654d;
+  --admin-lime: #d3f17c;
+  --admin-red: #a23e32;
+}
+
+* { box-sizing: border-box; }
+body { min-width: 320px; margin: 0; background: var(--admin-canvas); color: var(--admin-ink); font-family: "Segoe UI", sans-serif; }
+button, input, textarea, select { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid #91b93d; outline-offset: 2px; }
+.admin-layout { min-height: 100vh; display: grid; grid-template-columns: 238px minmax(0, 1fr); }
+.admin-sidebar { position: sticky; top: 0; display: flex; flex-direction: column; height: 100vh; padding: 27px 16px 22px; background: #183d32; color: #f7f8f3; }
+.admin-brand { display: flex; align-items: center; gap: 11px; padding: 0 8px; color: inherit; font-size: 15px; font-weight: 750; letter-spacing: 1px; text-decoration: none; }
+.admin-brand > span:first-child { display: grid; width: 35px; aspect-ratio: 1; place-items: center; background: var(--admin-lime); color: #183d32; font-family: Georgia, serif; font-size: 21px; }
+.admin-brand small { display: block; margin-top: 3px; color: #a8c5b7; font-size: 9px; letter-spacing: 2px; }
+.sidebar-label, .admin-kicker { font-size: 10px; font-weight: 700; letter-spacing: 1.6px; }
+.sidebar-label { margin: 53px 10px 12px; color: #9eb9ac; }
+.admin-nav { display: grid; gap: 5px; }
+.admin-nav-item { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 45px; padding: 0 12px; border: 0; background: transparent; color: #d7e2da; text-align: left; cursor: pointer; }
+.admin-nav-item > span { width: 20px; color: #b5ccbd; text-align: center; font-size: 18px; }
+.admin-nav-item:hover, .admin-nav-item.is-active { background: #285748; color: #fff; }
+.admin-nav-item.is-active { box-shadow: inset 3px 0 var(--admin-lime); }
+.admin-nav-item b { margin-left: auto; color: var(--admin-lime); font-size: 12px; }
+.sidebar-site-link { margin-top: auto; padding: 14px 10px 0; border-top: 1px solid #3b6254; color: #d6e3da; font-size: 13px; text-decoration: none; }
+.admin-main { min-width: 0; padding: 32px clamp(20px, 4vw, 58px) 56px; }
+.admin-topbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-bottom: 25px; border-bottom: 1px solid var(--admin-line); }
+.admin-kicker { margin: 0 0 9px; color: var(--admin-green); }
+.admin-topbar h1 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 31px; font-weight: 500; }
+.admin-subtitle { margin: 7px 0 0; color: var(--admin-muted); font-size: 14px; }
+.admin-account { display: flex; align-items: center; gap: 10px; font-size: 13px; }
+.account-avatar { display: grid; width: 34px; aspect-ratio: 1; place-items: center; background: var(--admin-lime); color: var(--admin-ink); font-weight: 700; }
+.signout-button { width: 34px; aspect-ratio: 1; border: 1px solid var(--admin-line); background: transparent; color: var(--admin-ink); cursor: pointer; font-size: 17px; }
+.admin-content { padding-top: 28px; }
+.admin-status { margin: 20px 0 0; padding: 12px 14px; border-left: 3px solid var(--admin-green); background: #e8efe9; color: var(--admin-ink); font-size: 14px; }
+.admin-status[data-kind="error"] { border-color: var(--admin-red); background: #f8eae7; }
+.view-heading { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
+.view-heading h2 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 24px; font-weight: 500; }
+.view-heading p { margin: 5px 0 0; color: var(--admin-muted); font-size: 13px; }
+.stats-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 13px; margin-bottom: 26px; }
+.stat-card { min-height: 125px; padding: 19px; border: 1px solid var(--admin-line); background: var(--admin-paper); }
+.stat-card p { margin: 0; color: var(--admin-muted); font-size: 13px; }
+.stat-card strong { display: block; margin-top: 18px; font-family: Georgia, "Times New Roman", serif; font-size: 32px; font-weight: 500; }
+.admin-panel { min-width: 0; padding: 20px; border: 1px solid var(--admin-line); background: var(--admin-paper); }
+.admin-panel + .admin-panel { margin-top: 16px; }
+.panel-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+.panel-heading h2 { margin: 0; font-size: 16px; }
+.panel-heading a, .text-button { border: 0; background: transparent; color: var(--admin-green); cursor: pointer; font-size: 13px; font-weight: 650; text-decoration: none; }
+.record-list { display: grid; }
+.message-record, .post-record { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; padding: 16px 0; border-top: 1px solid #edf0ec; }
+.record-main { min-width: 0; }
+.record-title { margin: 0; font-size: 14px; font-weight: 700; overflow-wrap: anywhere; }
+.record-meta, .record-date { margin: 5px 0 0; color: var(--admin-muted); font-size: 12px; overflow-wrap: anywhere; }
+.record-copy { margin: 9px 0 0; color: #45544c; font-size: 13px; line-height: 1.55; white-space: pre-wrap; overflow-wrap: anywhere; }
+.record-actions { display: flex; flex: 0 0 auto; flex-wrap: wrap; justify-content: flex-end; gap: 7px; }
+.small-button, .primary-button, .secondary-button { min-height: 36px; padding: 0 12px; border: 1px solid var(--admin-line); background: #fff; color: var(--admin-ink); cursor: pointer; font-size: 12px; }
+.small-button:hover, .secondary-button:hover { background: #f0f4ee; }
+.small-button.is-danger { color: var(--admin-red); }
+.primary-button { border-color: var(--admin-green); background: var(--admin-green); color: #fff; font-weight: 650; }
+.primary-button:hover { background: #124c39; }
+.empty-state { padding: 30px 12px; color: var(--admin-muted); font-size: 14px; text-align: center; }
+.blog-admin-grid { display: grid; grid-template-columns: minmax(250px, 0.8fr) minmax(0, 1.4fr); gap: 18px; align-items: start; }
+.post-form { display: grid; gap: 13px; }
+.field-label { display: grid; gap: 6px; color: #47564e; font-size: 12px; font-weight: 650; }
+.field-label input, .field-label textarea, .field-label select { width: 100%; min-height: 39px; padding: 9px 10px; border: 1px solid var(--admin-line); border-radius: 0; background: #fff; color: var(--admin-ink); font-size: 13px; }
+.field-label textarea { min-height: 160px; resize: vertical; line-height: 1.5; }
+.publish-toggle { display: flex; align-items: center; gap: 9px; color: #47564e; font-size: 13px; }
+.publish-toggle input { width: 16px; height: 16px; accent-color: var(--admin-green); }
+.form-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.message-record.is-unread .record-title::after { display: inline-block; width: 7px; height: 7px; margin-left: 8px; border-radius: 50%; background: #bf6a3d; content: ""; vertical-align: 1px; }
+.post-record .record-meta { color: var(--admin-green); font-weight: 650; }
+.loading-state { padding: 30px; color: var(--admin-muted); text-align: center; }
+
+@media (max-width: 850px) {
+  .admin-layout { grid-template-columns: 190px minmax(0, 1fr); }
+  .admin-main { padding-inline: 22px; }
+  .blog-admin-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 620px) {
+  .admin-layout { display: block; }
+  .admin-sidebar { position: static; width: 100%; height: auto; padding: 13px 14px; }
+  .admin-brand { padding: 0 2px; }
+  .sidebar-label, .sidebar-site-link { display: none; }
+  .admin-nav { display: flex; gap: 4px; margin-top: 13px; }
+  .admin-nav-item { justify-content: center; min-height: 40px; padding: 0 8px; font-size: 12px; }
+  .admin-nav-item > span { width: auto; }
+  .admin-nav-item b { margin-left: 0; }
+  .admin-main { padding: 22px 15px 40px; }
+  .admin-topbar { align-items: flex-start; }
+  .admin-topbar h1 { font-size: 26px; }
+  .admin-account { gap: 7px; font-size: 0; }
+  .account-avatar, .signout-button { flex: 0 0 34px; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .stat-card:last-child { grid-column: 1 / -1; }
+  .admin-panel { padding: 15px; }
+  .message-record, .post-record { display: grid; }
+  .record-actions { justify-content: flex-start; }
+  .view-heading { align-items: flex-start; flex-direction: column; }
+}

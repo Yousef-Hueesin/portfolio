@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f5f2">
+    <title>Admin | RLEAD</title>
+    <link rel="stylesheet" href="admin.css">
+    <script type="module" src="admin.js"></script>
+  </head>
+  <body>
+    <div class="admin-layout">
+      <aside class="admin-sidebar">
+        <a class="admin-brand" href="index.html"><span aria-hidden="true">R</span><span>RLEAD <small>STUDIO</small></span></a>
+        <p class="sidebar-label">WORKSPACE</p>
+        <nav class="admin-nav" aria-label="Admin navigation">
+          <button class="admin-nav-item is-active" type="button" data-admin-view="overview"><span aria-hidden="true">◫</span>Overview</button>
+          <button class="admin-nav-item" type="button" data-admin-view="blog"><span aria-hidden="true">▤</span>Blog</button>
+          <button class="admin-nav-item" type="button" data-admin-view="messages"><span aria-hidden="true">✉</span>Messages <b data-unread-count>0</b></button>
+        </nav>
+        <a class="sidebar-site-link" href="index.html">← View website</a>
+      </aside>
+
+      <main class="admin-main">
+        <header class="admin-topbar">
+          <div>
+            <p class="admin-kicker">RLEAD / ADMIN</p>
+            <h1 data-page-title>Overview</h1>
+            <p class="admin-subtitle" data-page-subtitle>Site activity at a glance.</p>
+          </div>
+          <div class="admin-account">
+            <span class="account-avatar" aria-hidden="true">A</span>
+            <span data-admin-email>Admin</span>
+            <button type="button" class="signout-button" data-signout aria-label="Sign out" title="Sign out">↗</button>
+          </div>
+        </header>
+        <p class="admin-status" data-admin-status role="status" hidden></p>
+        <section class="admin-content" data-admin-content aria-live="polite"></section>
+      </main>
+    </div>
+  </body>
+</html>

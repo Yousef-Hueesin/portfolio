@@ -18,11 +18,11 @@
       <section class="auth-intro" aria-labelledby="auth-title">
         <a class="back-link" href="index.html">← Back to portfolio</a>
         <p class="eyebrow">JOIN THE COMMUNITY</p>
-        <h1>Make room for <span>what’s next.</span></h1>
+        <h1 id="auth-title">Make room for <span>what’s next.</span></h1>
         <p>Create an account and get started with RLEAD.</p>
       </section>
       <section class="auth-panel" aria-label="Create an account">
-        <form class="auth-card" data-demo-form="signup">
+        <form class="auth-card" data-firebase-signup>
           <div class="auth-card-heading">
             <span class="auth-icon" aria-hidden="true">✳</span>
             <p class="eyebrow">GET STARTED</p>
@@ -41,9 +41,10 @@
           <button class="auth-submit" type="submit">Create account <span aria-hidden="true">→</span></button>
           <p class="form-status" aria-live="polite"></p>
           <p class="auth-switch">Already have an account? <a href="login.html">Log in</a></p>
-          <p class="auth-notice">Demo form only. A secure authentication service is required to create accounts.</p>
+          <p class="auth-notice">We’ll email you a verification link. Creating an account does not grant admin access.</p>
         </form>
       </section>
     </main>
+    <script type="module" src="signup-firebase.js"></script>
   </body>
 </html>

@@ -1,0 +1,81 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAdmin() {
+      return request.auth != null
+        && (
+          (request.auth.token.email == 'yhussin757@gmail.com'
+            && request.auth.token.email_verified == true)
+          || exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+        );
+    }
+
+    function validMessage() {
+      return request.resource.data.keys().hasOnly([
+          'firstName', 'lastName', 'email', 'phone', 'subject', 'message', 'read', 'createdAt'
+        ])
+        && request.resource.data.keys().hasAll([
+          'firstName', 'lastName', 'email', 'phone', 'subject', 'message', 'read', 'createdAt'
+        ])
+        && request.resource.data.firstName is string
+        && request.resource.data.firstName.size() <= 100
+        && request.resource.data.lastName is string
+        && request.resource.data.lastName.size() <= 100
+        && request.resource.data.email is string
+        && request.resource.data.email.size() <= 320
+        && request.resource.data.phone is string
+        && request.resource.data.phone.size() <= 40
+        && request.resource.data.subject is string
+        && request.resource.data.subject.size() <= 200
+        && request.resource.data.message is string
+        && request.resource.data.message.size() > 0
+        && request.resource.data.message.size() <= 5000
+        && request.resource.data.read == false
+        && request.resource.data.createdAt == request.time;
+    }
+
+    function validPost() {
+      return request.resource.data.keys().hasOnly([
+          'title', 'category', 'excerpt', 'content', 'published', 'createdAt', 'updatedAt'
+        ])
+        && request.resource.data.keys().hasAll([
+          'title', 'category', 'excerpt', 'content', 'published', 'createdAt', 'updatedAt'
+        ])
+        && request.resource.data.title is string
+        && request.resource.data.title.size() > 0
+        && request.resource.data.title.size() <= 180
+        && request.resource.data.category is string
+        && request.resource.data.category.size() <= 80
+        && request.resource.data.excerpt is string
+        && request.resource.data.excerpt.size() <= 1000
+        && request.resource.data.content is string
+        && request.resource.data.content.size() > 0
+        && request.resource.data.content.size() <= 30000
+        && request.resource.data.published is bool
+        && request.resource.data.createdAt is timestamp
+        && request.resource.data.updatedAt is timestamp;
+    }
+
+    match /admins/{uid} {
+      allow get: if request.auth != null && request.auth.uid == uid;
+      allow list, create, update, delete: if false;
+    }
+
+    match /messages/{messageId} {
+      allow create: if validMessage();
+      allow get, list, delete: if isAdmin();
+      allow update: if isAdmin()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['read'])
+        && request.resource.data.read is bool;
+    }
+
+    match /posts/{postId} {
+      allow get, list: if isAdmin() || resource.data.published == true;
+      allow create: if isAdmin() && validPost();
+      allow update: if isAdmin()
+        && validPost()
+        && request.resource.data.createdAt == resource.data.createdAt;
+      allow delete: if isAdmin();
+    }
+  }
+}

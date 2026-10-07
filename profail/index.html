@@ -24,9 +24,12 @@
         <a href="#skills">Skills</a>
         <a href="#services">Services</a>
         <a href="#portfolio">Portfolio</a>
+        <a href="#projects">Projects</a>
+        <a href="#testimonials">Testimonials</a>
         <a href="#contact">Contact</a>
-        <a class="nav-login" href="login.html">Log in</a>
-        <a class="nav-signup" href="signup.html">Sign up</a>
+        <a href="admin.html">Admin</a>
+        <a class="nav-login" href="signup.html">Sign up</a>
+        <button class="nav-login" type="button">Log in</button>
       </nav>
     </header>
 
@@ -160,49 +163,99 @@
         </section>
       </section>
 
+      <section class="projects-section" id="projects">
+        <div class="section-heading">
+          <p class="eyebrow">FEATURED WORK</p>
+          <h2>Selected <span>projects</span></h2>
+          <p>Sample project descriptions are here for now; replace them with your own project details and live links.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card">
+            <a class="project-preview" href="assets/project-1.jpg" target="_blank" rel="noopener" aria-label="Open portfolio website project image">
+              <img src="assets/project-1.jpg" alt="">
+            </a>
+            <div class="project-copy">
+              <p class="project-type">WEB DESIGN · SAMPLE</p>
+              <h3>Responsive Portfolio Website</h3>
+              <p>A clean, responsive portfolio concept for presenting professional experience, skills, and recent work.</p>
+              <div class="project-links">
+                <a href="project.html">View project details</a>
+                <a href="assets/project-1.jpg" target="_blank" rel="noopener">View image</a>
+                <a href="#contact">Discuss a similar project</a>
+              </div>
+            </div>
+          </article>
+          <article class="project-card">
+            <a class="project-preview" href="assets/project-5.jpg" target="_blank" rel="noopener" aria-label="Open mobile dashboard project image">
+              <img src="assets/project-5.jpg" alt="">
+            </a>
+            <div class="project-copy">
+              <p class="project-type">UI DESIGN · SAMPLE</p>
+              <h3>Mobile Dashboard Concept</h3>
+              <p>A mobile-first interface concept that organizes key information into a simple, easy-to-scan dashboard.</p>
+              <div class="project-links">
+                <a href="dashboard-project.html">View project details</a>
+                <a href="assets/project-5.jpg" target="_blank" rel="noopener">View image</a>
+                <a href="#contact">Discuss a similar project</a>
+              </div>
+            </div>
+          </article>
+          <article class="project-card">
+            <a class="project-preview" href="assets/project-4.jpg" target="_blank" rel="noopener" aria-label="Open business website project image">
+              <img src="assets/project-4.jpg" alt="">
+            </a>
+            <div class="project-copy">
+              <p class="project-type">WEB DEVELOPMENT · SAMPLE</p>
+              <h3>Small Business Website</h3>
+              <p>A friendly business website concept with clear service information and a straightforward contact path.</p>
+              <div class="project-links">
+                <a href="assets/project-4.jpg" target="_blank" rel="noopener">View image</a>
+                <a href="#contact">Discuss a similar project</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="testimonials-section" id="testimonials">
+        <div class="section-heading">
+          <p class="eyebrow">CLIENT FEEDBACK</p>
+          <h2>Kind words from <span>clients</span></h2>
+          <p>Replace these placeholders with real feedback shared with permission.</p>
+        </div>
+        <div class="testimonial-grid">
+          <article class="testimonial-card">
+            <blockquote>[Add an approved client quote about working together.]</blockquote>
+            <div class="testimonial-author">
+              <span class="testimonial-avatar" aria-hidden="true">+</span>
+              <p><strong>[Client name]</strong><span>[Project or role]</span></p>
+            </div>
+          </article>
+          <article class="testimonial-card">
+            <blockquote>[Add an approved client quote about the website or design.]</blockquote>
+            <div class="testimonial-author">
+              <span class="testimonial-avatar" aria-hidden="true">+</span>
+              <p><strong>[Client name]</strong><span>[Project or role]</span></p>
+            </div>
+          </article>
+          <article class="testimonial-card">
+            <blockquote>[Add an approved client quote about the final result.]</blockquote>
+            <div class="testimonial-author">
+              <span class="testimonial-avatar" aria-hidden="true">+</span>
+              <p><strong>[Client name]</strong><span>[Project or role]</span></p>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section class="blog-section" id="blog">
         <div class="section-heading">
           <p class="eyebrow">NOTES FROM THE WORKSHOP</p>
           <h2>Ideas, lessons &amp; <span>new things</span></h2>
           <p>Thoughts on building useful, thoughtful experiences for the web.</p>
         </div>
-        <div class="blog-grid">
-          <article class="blog-card">
-            <p class="blog-meta">DESIGN <span>·</span> 5 MIN READ</p>
-            <h3>Start with the person using your website</h3>
-            <p>A little planning around your visitors can make every page easier to understand and use.</p>
-            <details class="blog-article">
-              <summary>Read article</summary>
-              <div class="blog-article-copy">
-                <p>Before choosing colors or writing code, think about who will visit your website and what they came to do. A clear goal helps you decide what belongs on the page and what can be left out.</p>
-                <p>Use familiar words for navigation, make important actions easy to find, and check that text is comfortable to read on a phone. Ask someone unfamiliar with the project to try the page; their questions often reveal where the experience can be simpler.</p>
-              </div>
-            </details>
-          </article>
-          <article class="blog-card">
-            <p class="blog-meta">DEVELOPMENT <span>·</span> 6 MIN READ</p>
-            <h3>Small steps to a more responsive layout</h3>
-            <p>Build a flexible foundation with readable type, adaptable grids, and room for content to grow.</p>
-            <details class="blog-article">
-              <summary>Read article</summary>
-              <div class="blog-article-copy">
-                <p>Responsive layouts start with flexible building blocks. Let content determine when columns need to stack, and use grid or flexbox instead of fixed widths that assume every screen is the same.</p>
-                <p>Test at narrow and wide sizes as you work. Keep images fluid, give buttons enough room to tap, and make sure headings wrap naturally. A few small checks at each step are easier than repairing a layout at the end.</p>
-              </div>
-            </details>
-          </article>
-          <article class="blog-card">
-            <p class="blog-meta">LEARNING <span>·</span> 4 MIN READ</p>
-            <h3>Keep learning by making real projects</h3>
-            <p>Practical projects turn new ideas into skills—and give you something useful to share.</p>
-            <details class="blog-article">
-              <summary>Read article</summary>
-              <div class="blog-article-copy">
-                <p>When learning a new tool, build something small that solves a real problem. A focused project gives you a reason to practice and helps you remember how the pieces fit together.</p>
-                <p>Start with a simple version, write down what you want to improve, and add one feature at a time. Finishing and sharing the result is part of learning too: it gives you useful feedback and a record of your progress.</p>
-              </div>
-            </details>
-          </article>
+        <div class="blog-grid" data-blog-list aria-live="polite">
+          <p class="blog-loading">Loading articles...</p>
         </div>
       </section>
 
@@ -224,7 +277,7 @@
           </div>
           <div class="contact-form-wrap">
             <h2>Contact me</h2>
-            <form class="contact-form" data-demo-form="contact">
+            <form class="contact-form" data-firebase-contact>
               <div class="form-pair">
                 <input type="text" name="first-name" placeholder="First name" aria-label="First name">
                 <input type="text" name="last-name" placeholder="Last name" aria-label="Last name">
@@ -233,8 +286,8 @@
                 <input type="tel" name="phone" placeholder="Phone" aria-label="Phone">
                 <input type="text" name="subject" placeholder="Subject" aria-label="Subject">
               </div>
-              <input type="email" name="email" placeholder="Email" aria-label="Email">
-              <textarea name="message" placeholder="Message" aria-label="Message"></textarea>
+              <input type="email" name="email" placeholder="Email" aria-label="Email" required>
+              <textarea name="message" placeholder="Message" aria-label="Message" required></textarea>
               <button type="submit">Send message</button>
               <p class="form-status" aria-live="polite"></p>
             </form>
@@ -245,5 +298,6 @@
 
     <div class="copyright">© <span data-current-year>2026</span> RLEAD. All rights reserved.</div>
     <script src="script.js" defer></script>
+    <script type="module" src="site-firebase.js"></script>
   </body>
 </html>

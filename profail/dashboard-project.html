@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+                <h2>MyAdmin</h2>
+            </div>
+
+            <nav class="menu">
+
+                <button
+                    class="menu-btn active"
+                    id="dashboardBtn">
+
+                    🏠
+                    <span>Dashboard</span>
+
+                </button>
+
+
+                <button
+                    class="menu-btn"
+                    id="messagesBtn">
+
+                    💬
+                    <span>Messages</span>
+
+                </button>
+
+
+                <button
+                    class="menu-btn"
+                    id="usersBtn">
+
+                    👥
+                    <span>Users</span>
+
+                </button>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- ================= MAIN ================= -->
+
+        <main class="main">
+
+            <!-- TOP HEADER -->
+
+            <header class="topbar">
+
+                <div>
+
+                    <h1 id="pageTitle">
+                        Dashboard
+                    </h1>
+
+                    <p id="pageSubtitle">
+                        Welcome back, Admin
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="clearData"
+                    class="clear-btn">
+
+                    Clear Demo Data
+
+                </button>
+
+            </header>
+
+
+            <!-- PAGE CONTENT -->
+
+            <div id="pageContent">
+
+                <!-- JavaScript will put content here -->
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>

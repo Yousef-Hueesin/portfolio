@@ -19,15 +19,15 @@
         <a class="back-link" href="index.html">← Back to portfolio</a>
         <p class="eyebrow">WELCOME BACK</p>
         <h1 id="auth-title">Good to see <span>you again.</span></h1>
-        <p>Sign in to continue your journey with RLEAD.</p>
+        <p>Sign in to manage your website content and messages.</p>
       </section>
       <section class="auth-panel" aria-label="Log in">
-        <form class="auth-card" data-demo-form="login">
+        <form class="auth-card" data-admin-login>
           <div class="auth-card-heading">
             <span class="auth-icon" aria-hidden="true">↗</span>
             <p class="eyebrow">YOUR ACCOUNT</p>
             <h2>Log in</h2>
-            <p>Enter your details to access your account.</p>
+            <p>Use your Firebase admin account to continue.</p>
           </div>
           <label for="login-email">Email address</label>
           <input id="login-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
@@ -38,10 +38,11 @@
           </div>
           <button class="auth-submit" type="submit">Log in <span aria-hidden="true">→</span></button>
           <p class="form-status" aria-live="polite"></p>
-          <p class="auth-switch">New to RLEAD? <a href="signup.html">Create an account</a></p>
-          <p class="auth-notice">Demo form only. A secure authentication service is required to sign in.</p>
+          <p class="auth-switch">New to RLEAD? <a href="signup.html">Sign up</a></p>
+          <p class="auth-notice">Admin accounts are created in Firebase by the site owner.</p>
         </form>
       </section>
     </main>
+    <script type="module" src="login-firebase.js"></script>
   </body>
 </html>
